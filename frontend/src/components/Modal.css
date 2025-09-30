@@ -1,0 +1,127 @@
+/* frontend/src/components/Modal.css */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 24, 39, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background-color: var(--color-background); /* Light background */
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  width: 90%;
+  max-width: 800px;
+  position: relative;
+  border: 1px solid var(--color-border);
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.modal-close-button {
+  /* ... (style remains the same) ... */
+}
+
+.modal-header {
+  margin-bottom: 2rem;
+}
+.modal-title {
+  font-family: var(--font-family-heading);
+  font-size: 2rem;
+  margin: 0;
+}
+.modal-subtitle {
+  font-family: var(--font-family-body);
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Card Sections (Light Theme) --- */
+.modal-card {
+  background-color: var(--color-surface);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+}
+
+.modal-card h3 {
+  font-family: var(--font-family-heading);
+  margin: 0 0 1.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+/* Risk Assessment Card */
+.risk-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.risk-value.high { color: var(--color-risk-high); }
+.risk-value.medium { color: var(--color-risk-medium); }
+.risk-value.low { color: var(--color-risk-low); }
+
+.risk-level-bar-light {
+  height: 6px;
+  background: linear-gradient(90deg, #bbf7d0 0%, #fde68a 50%, #fecaca 100%);
+  border-radius: 99px;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.risk-level-indicator-light {
+  position: absolute;
+  top: -3px;
+  height: 12px;
+  width: 12px;
+  background-color: var(--color-text-primary);
+  border-radius: 50%;
+  border: 2px solid var(--color-surface);
+  transition: left 0.5s ease-out;
+}
+.risk-level-indicator-light.low { left: 15%; }
+.risk-level-indicator-light.medium { left: 50%; }
+.risk-level-indicator-light.high { left: 85%; }
+
+.action-box {
+  background-color: var(--color-background);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.action-box strong {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Performance Metrics Card */
+.metric-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.metric-item:last-child { border-bottom: none; }
+.metric-item span { color: var(--color-text-secondary); }
+.metric-item strong { font-size: 1.25rem; }
+
+/* Feature Impact Card */
+.metric-bar-item { width: 100%; margin-bottom: 1rem; }
+.metric-label { display: flex; justify-content: space-between; margin-bottom: 0.75rem; }
+.bar-background { height: 8px; background-color: var(--color-border); border-radius: 99px; overflow: hidden; }
+.bar-foreground { height: 100%; border-radius: 99px; transition: width 0.5s ease-out; }
